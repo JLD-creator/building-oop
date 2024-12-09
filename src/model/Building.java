@@ -6,12 +6,19 @@ import java.util.Objects;
 public class Building {
     private String direction;
     private String municipiality;
-    private Aparment[] aparment;
+    private Aparment[] aparments;
 
     public Building(String direction, String municipiality, Aparment[] aparment) {
         this.direction = direction;
         this.municipiality = municipiality;
-        this.aparment = aparment;
+        this.aparments = aparment;
+    }
+    public void findAparment(String door, int plant){
+        for (Aparment aparment: aparments){
+            if (aparment.getDoor().equals(door) && aparment.getPlant()==plant){
+                System.out.println(aparment);
+            }
+        }
     }
 
     public String getDirection() {
@@ -31,11 +38,11 @@ public class Building {
     }
 
     public Aparment[] getAparment() {
-        return aparment;
+        return aparments;
     }
 
     public void setAparment(Aparment[] aparment) {
-        this.aparment = aparment;
+        this.aparments = aparment;
     }
 
     @Override
@@ -43,12 +50,12 @@ public class Building {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Building building = (Building) o;
-        return Objects.equals(direction, building.direction) && Objects.equals(municipiality, building.municipiality) && Objects.deepEquals(aparment, building.aparment);
+        return Objects.equals(direction, building.direction) && Objects.equals(municipiality, building.municipiality) && Objects.deepEquals(aparments, building.aparment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(direction, municipiality, Arrays.hashCode(aparment));
+        return Objects.hash(direction, municipiality, Arrays.hashCode(aparments));
     }
 
     @Override
@@ -56,7 +63,7 @@ public class Building {
         return "Building{" +
                 "direction='" + direction + '\'' +
                 ", municipiality='" + municipiality + '\'' +
-                ", aparment=" + Arrays.toString(aparment) +
+                ", aparment=" + Arrays.toString(aparments) +
                 '}';
     }
 }

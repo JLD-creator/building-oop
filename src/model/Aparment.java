@@ -6,13 +6,14 @@ import java.util.Objects;
 public class Aparment {
     private int plant;
     private String door;
-    private Propietary[] propietary;
+    private Propietary[] propietaries;
 
     public Aparment(int plant, String door, Propietary[] propietary) {
         this.plant = plant;
         this.door = door;
-        this.propietary = propietary;
+        this.propietaries = propietary;
     }
+
 
     public int getPlant() {
         return plant;
@@ -31,11 +32,11 @@ public class Aparment {
     }
 
     public Propietary[] getPropietary() {
-        return propietary;
+        return propietaries;
     }
 
     public void setPropietary(Propietary[] propietary) {
-        this.propietary = propietary;
+        this.propietaries = propietary;
     }
 
     @Override
@@ -43,12 +44,12 @@ public class Aparment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aparment aparment = (Aparment) o;
-        return plant == aparment.plant && Objects.equals(door, aparment.door) && Objects.deepEquals(propietary, aparment.propietary);
+        return plant == aparment.plant && Objects.equals(door, aparment.door) && Objects.deepEquals(propietaries, aparment.propietaries);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(plant, door, Arrays.hashCode(propietary));
+        return Objects.hash(plant, door, Arrays.hashCode(propietaries));
     }
 
     @Override
@@ -56,7 +57,7 @@ public class Aparment {
         return "Aparment{" +
                 "plant=" + plant +
                 ", door='" + door + '\'' +
-                ", propietary=" + Arrays.toString(propietary) +
+                ", propietary=" + Arrays.toString(propietaries) +
                 '}';
     }
 }
