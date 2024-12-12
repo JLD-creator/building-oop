@@ -3,8 +3,8 @@ package model;
 import java.util.Objects;
 
 public class Propietary {
-    private  String nif;
-    private  String name;
+    private String nif;
+    private String name;
     private String surname;
 
     public Propietary(String nif, String name, String surname) {
