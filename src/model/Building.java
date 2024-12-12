@@ -50,7 +50,7 @@ public class Building {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Building building = (Building) o;
-        return Objects.equals(direction, building.direction) && Objects.equals(municipiality, building.municipiality) && Objects.deepEquals(aparments, building.aparment);
+        return Objects.equals(direction, building.direction) && Objects.equals(municipiality, building.municipiality) && Objects.deepEquals(aparments, building.aparments);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class Building {
         return "Building{" +
                 "direction='" + direction + '\'' +
                 ", municipiality='" + municipiality + '\'' +
-                ", aparment=" + Arrays.toString(aparments) +
+                ", aparments=" + Arrays.toString(aparments) +
                 '}';
     }
 }
