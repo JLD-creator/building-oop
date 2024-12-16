@@ -13,13 +13,36 @@ public class Building {
         this.municipiality = municipiality;
         this.aparments = aparment;
     }
-    public void findAparment(String door, int plant){
+
+    public void showInfo() {
+        System.out.println("Direccion: " + direction + ", Municipio " + municipiality + ", Apartamentos " + aparments);
+    }
+
+    public Aparment findAparment(String door, int plant) {
+        for (Aparment aparment : aparments) {
+            if (aparment.getDoor().equals(door) && aparment.getPlant() == plant) {
+                aparment.showInfo();
+            }
+        }
+        return null;
+    }
+
+    public Aparment showFloorAparments( int floor){
         for (Aparment aparment: aparments){
-            if (aparment.getDoor().equals(door) && aparment.getPlant()==plant){
+            if (aparment.getPlant() == floor){
                 System.out.println(aparment);
             }
         }
+        return null;
     }
+    public Propietary[] findOwners(int floor, String door){
+        Aparment aparment = findAparment(door,floor);
+        if (aparment != null){
+            return aparment.getPropietary();
+        }
+        return null;
+    }
+
 
     public String getDirection() {
         return direction;

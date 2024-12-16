@@ -12,6 +12,9 @@ public class Propietary {
         this.name = name;
         this.surname = surname;
     }
+    public void showInfo(){
+        System.out.println("NIF: "+nif+ ", nombre: "+name+ ", apellidos: "+surname);
+    }
 
     public String getNif() {
         return nif;

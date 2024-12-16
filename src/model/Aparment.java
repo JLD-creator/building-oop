@@ -13,7 +13,12 @@ public class Aparment {
         this.door = door;
         this.propietaries = propietary;
     }
-
+public void showInfo(){
+        System.out.println("Planta: "+plant+ ", puerta: "+door+ ", Propietarios: ");
+        for (Propietary propietary: propietaries){
+            propietary.showInfo();
+        }
+    }
 
     public int getPlant() {
         return plant;
