@@ -1,7 +1,4 @@
-import components.AparmentReader;
-import components.BuildingApp;
-import components.BuildingReader;
-import components.PropietaryReader;
+import components.*;
 import model.Aparment;
 import model.Building;
 
@@ -13,7 +10,7 @@ public class Main {
         PropietaryReader propietaryReader = new PropietaryReader(scanner);
         AparmentReader aparmentReader = new AparmentReader(scanner, propietaryReader);
         BuildingReader buildingReader = new BuildingReader(scanner, aparmentReader);
-        BuildingApp buildingApp = new BuildingApp(scanner, buildingReader);
-        buildingApp.run();
+        BuildingAppMenu buildingAppMenu = new BuildingAppMenu(scanner, buildingReader);
+        buildingAppMenu.run();
     }
 }
