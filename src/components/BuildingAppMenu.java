@@ -1,5 +1,6 @@
 package components;
 
+import model.Aparment;
 import model.Building;
 
 import java.util.Scanner;
@@ -39,7 +40,8 @@ public class BuildingAppMenu {
         scanner.nextLine();
         System.out.println("Introduce una puerta");
         String door = scanner.nextLine();
-        building.findAparment(door, plant);
+         var aparment =  building.findAparment(door, plant);
+         aparment.showInfo();
     }
 
     private void option3(Building building) {
@@ -49,6 +51,7 @@ public class BuildingAppMenu {
         System.out.println("Introduce una puerta");
         String door = scanner.nextLine();
         building.findOwners(plant, door);
+
     }
 
     private void option2(Building building) {
